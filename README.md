@@ -1,1 +1,2 @@
-# Lab_2
+- Did you hear that Microsoft is moving from a "Windows as a product" model to a "Windows as a service" model?
+- Yeah, the ex-girlfriend got a big alimony payment from Gates.
