@@ -58,3 +58,8 @@
 	height: auto;
 	object-fit: contain;
 }
+
+a:active {
+	/*outline-color: #000;*/
+	outline-color: #aaa;
+}
