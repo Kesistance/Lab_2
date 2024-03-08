@@ -59,7 +59,12 @@
 	object-fit: contain;
 }
 
+a {
+	background-color: #aaa;
+	border-color: #000;
+}
+
 a:active {
-	/*outline-color: #000;*/
 	outline-color: #aaa;
+	background-color: black;
 }
