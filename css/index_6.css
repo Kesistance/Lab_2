@@ -2,71 +2,89 @@ body {
 	background-color: #333;
 }
 .text {
-	color: aliceblue;
 	text-align: center;
+	font-size: large;
+	color: bisque;
 }
-.spinner {
-	width: 80px;
-	height: 80px;
-	margin: 100px auto;
-	position: relative;
-}
-
-.spinner:before,
-.spinner:after {
-	content: '';
+.anim1-container {
 	position: absolute;
+	left: 50%;
+	top: 10%;
+	transform: translate(-50%, -50%);
+	width: 470px;
+	height: 470px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.anim1-element {
 	border-radius: 50%;
+	position: absolute;
+	animation: anim1-animation 5s ease-in-out infinite;
 }
 
-.spinner:before {
-	width: 80px;
-	height: 80px;
-	border: 4px solid #333;
-	border-top-color: #57b846;
-	animation: spin 2s linear infinite;
-}
-
-.spinner:after {
-	width: 65px;
-	height: 65px;
-	top: 7px;
-	left: 7px;
-	border: 4px solid #333;
-	border-top-color: #f5a623;
-	animation: spin 3s linear infinite;
-	opacity: 0.7;
-}
-
-.spinner:after:before {
-	content: '';
+.anim1-element:nth-child(1) {
 	width: 50px;
 	height: 50px;
-	top: 14px;
-	left: 14px;
-	border: 4px solid #333;
-	border-top-color: #e8491d;
-	animation: spin 4s linear infinite;
-	opacity: 0.5;
+	background: linear-gradient(to right, #f00, #f0f);
+	animation-delay: 0s;
+	box-shadow: 0px 0px 2px 2px rgba(255, 133, 123, 0.4);
 }
 
-.spinner:after:after {
-	content: '';
-	width: 35px;
-	height: 35px;
-	top: 21px;
-	left: 21px;
-	border: 4px solid #333;
-	border-top-color: #3498db;
-	animation: spin 5s linear infinite;
-	opacity: 0.3;
+.anim1-element:nth-child(1):checked {
+	box-shadow: 0px 0px 5px 5px rgba(255, 133, 123, 0.4);
 }
 
-@keyframes spin {
+.static-circle {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	background: #333;
+	position: absolute;
+	left: 50%;
+	top: 10%;
+	transform: translate(-50%, -50%);
+}
+
+.centered {
+	animation-play-state: paused;
+	animation-delay: 3s;
+}
+
+@keyframes anim1-animation {
 	0% {
-		transform: rotate(0deg);
+		left: calc(50% - 30px);
+		top: calc(50% - 30px);
 	}
+
+	25% {
+		left: calc(50% - 30px + 7.5px);
+		top: calc(50% - 30px + 7.5px);
+	}
+
+	50% {
+		left: calc(50% - 30px + 21px);
+		top: calc(50% - 30px + 21px);
+	}
+
+	75% {
+		left: calc(50% - 30px + 7.5px);
+		top: calc(50% - 30px + 7.5px);
+	}
+
 	100% {
-		transform: rotate(360deg);
+		left: calc(50% - 30px);
+		top: calc(50% - 30px);
+	}
+
+	45%,
+	55% {
+		animation-play-state: paused;
+	}
+
+	52.5%,
+	57.5% {
+		animation-play-state: running;
 	}
 }
