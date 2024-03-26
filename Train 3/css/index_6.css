@@ -1,11 +1,7 @@
 body {
 	background-color: #333;
 }
-.text {
-	text-align: center;
-	font-size: large;
-	color: bisque;
-}
+
 .anim1-container {
 	position: absolute;
 	left: 50%;
@@ -47,11 +43,6 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-.centered {
-	animation-play-state: paused;
-	animation-delay: 3s;
-}
-
 @keyframes anim1-animation {
 	0% {
 		left: calc(50% - 30px);
@@ -86,5 +77,45 @@ body {
 	52.5%,
 	57.5% {
 		animation-play-state: running;
+	}
+}
+
+.anim2-container {
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
+
+.anim2-element {
+	position: absolute;
+	border-radius: 50%;
+	background: linear-gradient(90deg, #00ffb3 0%, #00e1ff 100%);
+	width: 100px;
+	height: 100px;
+	animation: anim1-animation 3s ease-in-out infinite;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 20px rgba(0, 255, 179, 0.7);
+}
+
+@keyframes anim2-animation {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+		box-shadow: 0 0 20px rgba(0, 255, 179, 0.7),
+			0 0 100px rgba(0, 255, 179, 0.7), 0 0 200px rgba(0, 255, 179, 0.7),
+			0 0 400px rgba(0, 255, 179, 0.7);
+	}
+	50% {
+		transform: translate(-50%, -50%) rotate(180deg);
+		box-shadow: 0 0 20px rgba(0, 255, 179, 0.7),
+			0 0 100px rgba(0, 255, 179, 0.7), 0 0 200px rgba(0, 255, 179, 0.7),
+			0 0 400px rgba(0, 255, 179, 0.7);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+		box-shadow: 0 0 20px rgba(0, 255, 179, 0.7),
+			0 0 100px rgba(0, 255, 179, 0.7), 0 0 200px rgba(0, 255, 179, 0.7),
+			0 0 400px rgba(0, 255, 179, 0.7);
 	}
 }
