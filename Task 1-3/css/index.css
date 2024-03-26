@@ -1,0 +1,8 @@
+h1 {
+	color: orangered;
+	border: 1px solid red;
+}
+
+body {
+	background: blue; /*текст также остался синим*/
+}
